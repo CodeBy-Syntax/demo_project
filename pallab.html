@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Navigation Menu</title>
+  <link rel="stylesheet" href="pallab.css">
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* fixed navbar visible on all pages */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);  /* initial color */
+  color: white;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* menu layout */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+}
+
+/* links + hover effect */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* color/style change on hover */
+.navbar a:hover {
+  background: white;
+  color: #333;
+}
+
+/* color/style change when page is scrolled */
+.navbar.scrolled {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ensure sections are below the fixed navbar */
+.section {
+  min-height: 100vh;
+  padding-top: 70px; /* space for navbar height */
+  padding-left: 2rem;
+  font-size: 1.5rem;
+}
+</style>
+<body>
+  <!-- Fixed navigation bar -->
+  <nav id="navigation" class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sample page sections so you can scroll -->
+  <section id="home" class="section">Home section</section>
+  <section id="about" class="section">About section</section>
+  <section id="services" class="section">Services section</section>
+  <section id="contact" class="section">Contact section</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
